@@ -1,0 +1,279 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Estilo geral */
+body {
+    background: #1d1919;
+    color: #ffffff;
+    display: flex;
+    flex-direction: row;
+    padding: 20px;
+}
+
+/* Barra lateral */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 260px;
+    height: 100%;
+    background: #2c2f3a;
+    z-index: 1;
+}
+
+.logo-menu {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 15px;
+    height: 70px;
+    background: #1f2229;
+}
+
+.logo-menu .logo {
+    font-size: 25px;
+    color: #fff;
+}
+
+.toggle-btn {
+    color: #fff;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.list {
+    list-style: none;
+    padding: 20px 0;
+}
+
+.list-item {
+    margin: 10px 0;
+}
+
+.list-item a {
+    text-decoration: none;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    padding: 10px 15px;
+    border-radius: 4px;
+    transition: background 0.3s;
+    
+}
+
+.list-item a:hover {
+    background: rgba(248, 0, 0, 0.1);
+}
+
+.list-item i {
+    margin-right: 10px;
+    font-size: 20px;
+}
+
+.link-name {
+    font-size: 16px;
+    color: #fff;
+}
+
+/* Conteúdo Principal */
+.main-content {
+    margin-left: 260px;
+    padding: 20px;
+    width: calc(100% - 260px);
+}
+
+/* Carrossel de imagens */
+.carousel-container {
+    position: relative;
+    width: 100%;
+    margin-bottom: 40px;
+}
+
+.carousel-images {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.carousel-images img {
+    width: 500px;
+    height: 300px;
+    object-fit: cover;
+    margin: 0 10px;
+}
+.meu-botao {
+    display: inline-flex;            /* permite alinhar ícone + texto */
+    align-items: center;            /* alinha verticalmente */
+    justify-content: center;        /* alinha horizontalmente */
+    padding: 10px 22px;
+    background-color: #00c853;
+    color: white;
+    text-decoration: none;
+    border-radius: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    gap: 8px;                        /* espaço entre ícone e texto */
+    transition: background 0.3s ease;
+  }
+  
+button.prev, button.next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    font-size: 24px;
+    cursor: pointer;
+    z-index: 10;
+}
+
+button.prev {
+    left: 10px;
+}
+
+button.next {
+    right: 10px;
+}
+
+  
+  .meu-botao i {
+    margin-right: 8px;
+    font-size: 20px;
+    vertical-align: middle;
+  }
+  
+  .meu-botao:hover {
+    background-color: #2bff00; /* verde mais escuro ao passar o mouse */
+  }
+  
+/* Avaliações e Comentários */
+.avaliacoes-container {
+    
+        margin-top: 40px; /* ou o valor que preferir */
+            
+    display: flex;
+    gap: 40px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+
+.avaliacoes-layout {
+    
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+    flex-wrap: wrap;
+    margin-top: 30px;
+    padding: 20px;
+    background-color: #1e1e1e;
+    border-radius: 10px;
+    
+}
+
+.nota-media {
+    font-size: 36px;
+    font-weight: bold;
+    color: #ffd700;
+    text-align: center ;
+}
+
+.estrelas-barras {
+    flex: 1;
+    min-width: 300px;
+}
+
+.linha-estrela {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 5px;
+}
+
+.barra {
+    width: 200px;
+    height: 10px;
+    background: #555;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.preenchida {
+    height: 100%;
+    background: #fbc02d;
+    width: 0%;
+    transition: width 0.5s ease;
+}
+
+.contador {
+    color: #ccc;
+    min-width: 20px;
+}
+
+.formulario-avaliacao {
+    flex: 1;
+    min-width: 300px;
+}
+
+.formulario-avaliacao textarea {
+    width: 100%;
+    height: 80px;
+    padding: 10px;
+    border-radius: 8px;
+    border: none;
+    margin-bottom: 10px;
+    resize: none;
+}
+
+.formulario-avaliacao select,
+.formulario-avaliacao button {
+    margin-top: 5px;
+    padding: 5px 10px;
+    border-radius: 6px;
+    border: none;
+}
+
+.formulario-avaliacao button {
+    background-color: #4caf50;
+    color: rgb(44, 42, 42);
+    cursor: pointer;
+}
+
+.comentarios-salvos {
+    flex: 1;
+    min-width: 300px;
+}
+
+.comentarios-salvos ul {
+    list-style: none;
+    padding: 0;
+}
+
+.comentarios-salvos li {
+    background: #2c2c2c;
+    border-radius: 8px;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-left: 4px solid #ffd700;
+    color: #fff;
+}
+
+.comentarios-salvos li span {
+    font-weight: bold;
+    color: #ffd700;
+}
+
+/* Rodapé */
+.footer {
+    background: #1f2229;
+    color: #fff;
+    text-align: center;
+    padding: 15px;
+    margin-top: 20px;
+}

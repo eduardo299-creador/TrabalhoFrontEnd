@@ -1,0 +1,132 @@
+    <!DOCTYPE html>
+    <html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Codegames</title>
+        <link rel="stylesheet" href="paginas2.css">
+        <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    </head>
+    <body>
+
+        <!-- Cabeçalho e Navegação -->
+        <header>
+            <nav class="sidebar">
+                <div class="logo-menu">
+                    <h2 class="logo">Codegames</h2>
+                
+                </div>
+                <ul class="list">
+                    <li class="list-item">
+                        <a href="paginas2.html" target="_blank">
+                            <i class='bx bx-grid-small'></i>
+                            <span class="link-name">Tela Inicial</span>
+                        </a>
+                    </li>
+                    <li class="list-item">
+                        <a href="https://www.microsoft.com/pt-br/store/most-popular/games/pc?msockid=0c288918fd3b63c716199c22fce66277" target="_blank">
+                            <i class='bx bx-joystick'></i>
+                            <span class="link-name">Em Alta</span>
+                        </a>
+                    </li>
+                    <li class="list-item">
+                        <a href="paginas3.html" target="_blank">
+                            <i class='bx bxs-download'></i>
+                            <span class="link-name">Downloads</span>
+                        </a>
+                    </li>
+                   
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+            <!-- Carrossel de Imagens -->
+            <section class="carousel-container">
+                <div class="carousel">
+                    <div class="carousel-images">
+                        <a href="paginas4.html" target="_blank">
+                            <img src="eita3.jpg" alt="Imagem 1">
+                        </a>
+                        <a href="paginas4.html" target="_blank">
+                            <img src="eita2.jpg" alt="Imagem 2">
+                        </a>
+                        <a href="paginas4.html" target="_blank">
+                            <img src="eita1.jpg" alt="Imagem 3">
+                        </a>
+                    </div>
+                    <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
+                    <button class="next" onclick="moveSlide(1)">&#10095;</button>
+                </div>
+            </section>
+
+            <!-- Seção de Jogos em Destaque -->
+            <section class="games">
+                <h2>Jogos em Destaque</h2>
+                <div class="games-container">
+                    <article class="game-card">
+                        <img src="opa.jpg" alt="Jogo 1">
+                        <h3>Jogo 1</h3>
+                        <p>Descrição do jogo 1.</p>
+                        <button class="comprar">Comprar</button>
+                    </article>
+                    <article class="game-card">
+                        <img src="rece.jpg" alt="Jogo 2">
+                        <h3>Jogo 2</h3>
+                        <p>Descrição do jogo 2.</p>
+                        <button class="comprar">Comprar</button>
+                    </article>
+                </div>
+            </section>
+            <section class="app-grid">
+                <div class="app-card">
+                    <a href="https://web.whatsapp.com">
+                    <img src="zapzap.png" alt="WhatsApp">
+                    <p>WhatsApp</p>
+                </a>
+                </div>
+                <div class="app-card">
+                    <img src="chatgpt.png" >
+                    <p>ChatGPT</p>
+                </div>
+                <div class="app-card">
+                    <img src="2instagram.png" >
+                    <p>Instagram</p>
+                </div>
+                <div class="app-card">
+                    <img src="youtube.png" >
+                    <p>YouTube</p>
+                </div>
+                <div class="app-card">
+                    <img src="opa.png">
+                    <p>X</p>
+                </div>
+            </section>
+            
+            <!-- Sobre Nós -->
+            <section class="sobre-nos">
+                <div class="sobre-nos-content">
+                    <h2>Sobre Nós</h2>
+                    <p>
+                        Bem-vindo à nossa loja de jogos! Estamos localizados em um dos melhores pontos da cidade para melhor atendê-lo.
+                        Venha nos visitar para conhecer nossos jogos e aproveitar ofertas exclusivas!
+                    </p>
+                </div>
+                <div class="mapa-container">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3601.818116704747!2d-49.293536089725386!3d-25.47774813468772!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94dce35d8fd77e69%3A0x7e40791e81a1e36c!2sShopping%20Palladium!5e0!3m2!1spt-BR!2sbr!4v1731976179527!5m2!1spt-BR!2sbr" 
+                        width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+            </section>
+
+        
+        <!-- Rodapé -->
+        <footer class="footer">
+            <p>&copy; 2025 Codehal. Todos os direitos reservados.</p>
+        </footer>
+
+        <!-- Script JS -->
+        <script src="paginas2.js"></script>
+    </body>
+    </html>

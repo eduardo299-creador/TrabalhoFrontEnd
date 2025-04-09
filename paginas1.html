@@ -1,0 +1,67 @@
+  <!DOCTYPE html>
+  <html lang="pt-br">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login & Cadastro</title>
+    <link rel="stylesheet" href="paginas1.css"> <!-- Referência ao CSS -->
+    <!-- Link para Boxicons -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  </head>
+  <body>
+    <div class="container">
+      <!-- Seção de Login -->
+      <div class="form login">
+        <div class="icon">
+          <i class="bx bxs-user-circle"></i> <!-- Ícone de usuário -->
+        </div>
+        
+        <h2>Login</h2>
+
+        <form action="paginas2.html" method="get"> <!-- Redireciona para paginas2.html -->
+          <input type="text" id="loginUsername" name="username" placeholder="Nome de Usuário" required>
+          <label for="loginPassword">Senha</label>
+          <input type="password" id="loginPassword" name="password" placeholder="Senha" required>
+          <button type="submit">Login</button>
+        </form>
+      </div>
+      
+      <!-- Seção de Cadastro -->
+      <div class="form signup">
+        <div class="icon">
+          <i class="bx bxs-user-circle"></i> <!-- Ícone de usuário -->
+        </div>
+        <h2>Cadastro</h2>
+        <form action="paginas2.html" method="get"> <!-- Redireciona para paginas2.html -->
+          <input type="text" id="signupUsername" name="username" placeholder="Nome de Usuário" required>
+          <input type="email" id="signupEmail" name="email" placeholder="E-mail" required>
+          <input type="password" id="signupPassword" name="password" placeholder="Senha" required>
+          <input type="password" id="signupConfirmPassword" name="confirmPassword" placeholder="Confirmar Senha" required>
+          <button type="submit">Criar Conta</button>
+        </form>
+      </div>
+    </div>
+    <script>
+      const signupForm = document.querySelector('.signup form');
+      const passwordInput = document.getElementById('signupPassword');
+      const confirmPasswordInput = document.getElementById('signupConfirmPassword');
+    
+      signupForm.addEventListener('submit', function(event) {
+        if (passwordInput.value !== confirmPasswordInput.value) {
+          event.preventDefault();
+          // Cria ou mostra uma mensagem de erro
+          let mensagem = document.getElementById('mensagemErro');
+          if (!mensagem) {
+            mensagem = document.createElement('p');
+            mensagem.id = 'mensagemErro';
+            mensagem.style.color = 'white';
+            mensagem.style.marginTop = '10px';
+            signupForm.appendChild(mensagem);
+          }
+          mensagem.textContent = "As senhas não coincidem. Verifique novamente.";
+        }
+      });
+    </script>
+    
+  </body>
+  </html>

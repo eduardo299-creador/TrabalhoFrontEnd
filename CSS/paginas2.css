@@ -1,0 +1,286 @@
+    /* Importando a fonte */
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+    /* Reset básico */
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Poppins', sans-serif;
+    }
+
+    /* Estilo geral */
+    body {
+        background: #1d1919;
+        color: #ffffff;
+    }
+
+    /* Barra lateral */
+    .sidebar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 260px; /* Largura da barra lateral */
+        height: 100%;
+        background: #2c2f3a;
+        transition: transform 0.3s ease;
+        z-index: 1; /* A barra lateral fica acima de outros elementos */
+    }
+
+    .sidebar.closed {
+        transform: translateX(-260px); /* Esconde a barra lateral */
+    }
+
+    /* Logo Menu */
+    .logo-menu {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 15px;
+        height: 70px;
+        background: #1f2229;
+    }
+
+    .logo-menu .logo {
+        font-size: 25px;
+        color: #fff;
+    }
+
+    .toggle-btn {
+        color: #fff;
+        font-size: 24px;
+        cursor: pointer;
+    }
+
+    /* Lista de navegação */
+    .list {
+        list-style: none;
+        padding: 20px 0;
+    }
+
+    .list-item {
+        margin: 10px 0;
+    }
+
+    .list-item a {
+        text-decoration: none;
+        color: #fff;
+        display: flex;
+        align-items: center;
+        padding: 10px 15px;
+        border-radius: 4px;
+        transition: background 0.3s;
+    }
+
+    .list-item a:hover {
+        background: rgba(248, 0, 0, 0.1);
+    }
+
+    .list-item i {
+        margin-right: 10px;
+        font-size: 20px;
+    }
+
+    .link-name {
+        font-size: 16px;
+        color: #fff;
+    }
+
+    /* Carrossel de Imagens */
+    .carousel-container {
+        position: relative;
+        width: 100%;
+        max-width: calc(100% - 260px);
+        margin-left: 260px;
+        overflow: hidden;
+        margin-top: 80px;
+    }
+
+    .carousel-images {
+        display: flex;
+        transition: transform 0.5s ease;
+    }
+
+    .carousel-images img {
+        width: 500px;  /* Ajuste para a largura das imagens */
+        height: 400px; /* Ajuste para a altura das imagens */
+        object-fit: cover;
+        margin: 0 10px;
+    }
+
+    /* Botões de navegação */
+    button.prev, button.next {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background-color: rgba(0, 0, 0, 0.5);
+        color: white;
+        border: none;
+        padding: 10px;
+        font-size: 24px;
+        cursor: pointer;
+        z-index: 10;
+    }
+
+    button.prev {
+        left: 10px;
+    }
+
+    button.next {
+        right: 10px;
+    }
+
+    /* Jogos em Destaque */
+    .games {
+        padding: 40px;
+        text-align: center;
+        background: #201e1e;
+        margin-left: 260px; /* Alinha a seção de jogos à direita da barra lateral */
+    }
+
+    .games h2 {
+        margin-bottom: 30px;
+        font-size: 32px;
+        color: rgba(72, 255, 0, 0.596);
+    }
+
+    .games-container {
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+
+    .game-card {
+        background: rgb(27, 26, 26);
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 4px 6px rgba(72, 255, 0, 0.596);
+        text-align: center;
+        padding: 15px;
+        transition: transform 0.3s;
+        width: 250px;
+    }
+
+    .game-card img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+        border-radius: 8px;
+    }
+
+    .game-card h3 {
+        font-size: 18px;
+        margin-top: 10px;
+    }
+
+    .game-card p {
+        font-size: 16px;
+        margin: 5px 0;
+    }
+
+    .game-card button {
+        margin-top: auto;
+        background-color: rgba(72, 255, 0, 0.596);
+        color: white;
+        border: none;
+        padding: 10px;
+        width: 100%;
+        font-size: 16px;
+        cursor: pointer;
+        transition: background 0.3s;
+    }
+
+    .game-card button:hover {
+        background-color: #00f320;
+    }
+
+    .game-card:hover {
+        transform: translateY(-5px);
+    }
+    .app-grid {
+        display: flex;
+        flex-wrap: wrap; /* permite que quebre a linha se não couber */
+        justify-content:right  ; /* centraliza os cards */
+        gap: 95px; /* espaço entre os cards */
+        padding: 20px;
+    }
+      .app-card {
+        width: 120px;
+        text-align: center;
+        border-radius: 10px;
+        background-color: #1f1f1f;
+        padding: 15px;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        cursor: pointer;
+      }
+      
+      .app-card img {
+        display: block; /* Garante que margin funcione como esperado */
+        margin-left: auto; /* Move pra direita */
+        margin-right: auto; /* Centraliza se quiser */
+        width: 80%; /* Opcional: reduz tamanho se estiver muito grande */   
+        
+            border-radius: 100px; /* Curva suave nos cantos */
+        }
+        
+    
+    
+      
+      .app-card:hover {
+        transform: scale(1.05);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+      }
+      
+      .app-card:hover img {
+        transform: scale(1.2);
+      }
+      
+      .app-card p {
+        color: white;
+        margin-top: 10px;
+        font-size: 14px;
+      }
+    /* Sobre Nós */
+    .sobre-nos {
+        padding: 40px;
+        background: #302e2e;
+        color: #ffffff;
+        margin-left: 260px; /* Corrigindo o desalinhamento */
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .sobre-nos-content {
+        flex: 1;
+        padding-right: 20px;
+    }
+
+    .sobre-nos-content h2 {
+        font-size: 32px;
+        color: rgba(72, 255, 0, 0.8);
+        margin-bottom: 20px;
+    }
+
+    .sobre-nos-content p {
+        font-size: 18px;
+        line-height: 1.6;
+    }
+
+    .mapa-container {
+        flex-shrink: 0;
+        width: 50%;
+        border: 2px solid rgba(255, 255, 255, 0.2);
+        border-radius: 8px;
+        overflow: hidden;
+    }
+
+    /* Rodapé */
+    .footer {
+        background: #1f2229;
+        color: #fff;
+        text-align: center;
+        padding: 15px;
+        margin-left: 260px; /* Ajuste para evitar sobreposição com a barra lateral */
+    }

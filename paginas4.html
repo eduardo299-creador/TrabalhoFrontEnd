@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo de Robô - Codegames</title>
+    <link rel="stylesheet" href="paginas4.css">
+   
+</head>
+<body>
+    <!-- Barra lateral -->
+    <nav class="sidebar">
+        <div class="logo-menu">
+            <h2 class="logo">Codegames</h2>
+            <i class='bx bx-menu toggle-btn'></i>
+        </div>
+        <ul class="list">
+            <li class="list-item">
+                <a href="paginas2.html" target="_blank">
+                    <i class='bx bx-grid-small'></i>
+                    <span class="link-name">Tela Inicial</span>
+                    
+                </a>
+            </li>
+            <li class="list-item">
+                <a href="paginas3.html" target="_blank">
+                    <i class='bx bxs-download'></i>
+                    <span class="link-name">Downloads</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- Conteúdo Principal -->
+    <div class="main-content">
+        <!-- Carrossel de imagens sobre o Jogo de Robô -->
+        <div class="carousel-container">
+            <div class="carousel">
+                <div class="carousel-images">
+                    <img src="eita3.jpg" alt="Jogo de Robô 1">
+                    <img src="eita2.jpg" alt="Jogo de Robô 2">
+                    <img src="eita1.jpg" alt="Jogo de Robô 3">
+                </div>
+                <button class="prev" onclick="moveSlide(1)">&#10094;</button>
+                <button class="next" onclick="moveSlide(1)">&#10095;</button>
+            </div>
+        </div>
+
+        <!-- Detalhes do Jogo de Robô -->
+        <section class="jogo-robot">
+            <h2>Sobre o Jogo de Robô</h2>
+            <div class="jogo-description">
+                <p>
+                    Em "SteamPaunck", você controlará um robô futurista em um mundo cheio de desafios e inimigos. A missão é
+                    explorar diversos cenários, lutar contra outras máquinas e completar missões épicas para salvar a cidade.
+                    Prepare-se para uma experiência intensa de ação e aventura!
+                </p>
+            </div>
+  <!-- Vídeo do jogo -->
+  <div class="video-container">
+    <h3>Assista ao Trailer:</h3>
+    <iframe width="100%" height="400" src="video1.mp4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+    <a href="#download" class="meu-botao" id="botaoDownload">
+        <i class='bx bxs-download'></i> Baixar Agora
+      </a>
+      
+      
+</div>
+            <!-- Avaliações -->
+            <div class="avaliacoes-container">
+                <div class="nota-media" id="nota-media">3.7</div>
+                <div class="estrelas-barras">
+                    <div class="linha-estrela">
+                        <span>5★</span>
+                        <div class="barra"><div class="preenchida" id="barra-5"></div></div>
+                        <span id="contagem-5" class="contador">0</span>
+                    </div>
+                    <div class="linha-estrela">
+                        <span>4★</span>
+                        <div class="barra"><div class="preenchida" id="barra-4"></div></div>
+                        <span id="contagem-4" class="contador">0</span>
+                    </div>
+                    <div class="linha-estrela">
+                        <span>3★</span>
+                        <div class="barra"><div class="preenchida" id="barra-3"></div></div>
+                        <span id="contagem-3" class="contador">0</span>
+                    </div>
+                    <div class="linha-estrela">
+                        <span>2★</span>
+                        <div class="barra"><div class="preenchida" id="barra-2"></div></div>
+                        <span id="contagem-2" class="contador">0</span>
+                    </div>
+                    <div class="linha-estrela">
+                        <span>1★</span>
+                        <div class="barra"><div class="preenchida" id="barra-1"></div></div>
+                        <span id="contagem-1" class="contador">0</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Comentários e formulário -->
+            <div class="avaliacoes-layout">
+                <div class="formulario-avaliacao">
+                    <h3>Deixe sua avaliação</h3>
+                    <textarea id="comentario" placeholder="Digite seu comentário"></textarea><br>
+                    <label for="nota">Nota:</label>
+                    <select id="nota">
+                        <option value="">Selecione</option>
+                        <option value="5">5★</option>
+                        <option value="4">4★</option>
+                        <option value="3">3★</option>
+                        <option value="2">2★</option>
+                        <option value="1">1★</option>
+                    </select>
+                    <button onclick="salvarComentario()">Enviar</button>
+                </div>
+
+                <div class="comentarios-salvos">
+                    <h3>Comentários</h3>
+                    <ul id="lista-comentarios"></ul>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    
+
+    <!-- Script JS -->
+    <script>
+        // Seu código aqui dentro
+      
+        function salvarComentario() {
+            const comentario = document.getElementById("comentario").value.trim();
+            const nota = document.getElementById("nota").value;
+
+            if (!comentario || !nota) {
+                alert("Preencha o comentário e selecione uma nota.");
+                return;
+            }
+
+            const lista = JSON.parse(localStorage.getItem("comentarios") || "[]");
+            lista.push({ comentario, nota: parseInt(nota) });
+            localStorage.setItem("comentarios", JSON.stringify(lista));
+
+            document.getElementById("comentario").value = "";
+            document.getElementById("nota").value = "";
+            atualizarComentarios();
+            atualizarEstatisticas();
+        }
+
+        function atualizarComentarios() {
+            const lista = JSON.parse(localStorage.getItem("comentarios") || "[]");
+            const ul = document.getElementById("lista-comentarios");
+            ul.innerHTML = "";
+
+            lista.forEach(({ comentario, nota }) => {
+                const li = document.createElement("li");
+                li.innerHTML = `<span>Nota ${nota}★</span><br>${comentario}`;
+                ul.appendChild(li);
+            });
+
+            atualizarEstatisticas();
+        }
+
+        function atualizarEstatisticas() {
+            const lista = JSON.parse(localStorage.getItem("comentarios") || "[]");
+            const total = lista.length;
+
+            if (total === 0) {
+                document.getElementById("nota-media").textContent = "N/A";
+                for (let i = 1; i <= 5; i++) {
+                    document.getElementById(`barra-${i}`).style.width = "0%";
+                    document.getElementById(`contagem-${i}`).textContent = "0";
+                }
+                return;
+            }
+
+            const contagens = [0, 0, 0, 0, 0];
+            let soma = 0;
+
+            lista.forEach(({ nota }) => {
+                const n = parseInt(nota);
+                if (n >= 1 && n <= 5) {
+                    contagens[n - 1]++;
+                    soma += n;
+                }
+            });
+
+            const media = (soma / total).toFixed(1);
+            document.getElementById("nota-media").textContent = media;
+
+            for (let i = 5; i >= 1; i--) {
+                const count = contagens[i - 1];
+                const porcentagem = ((count / total) * 100).toFixed(0);
+                document.getElementById(`barra-${i}`).style.width = `${porcentagem}%`;
+                document.getElementById(`contagem-${i}`).textContent = count;
+            }
+        }
+       
+    </script>
+
+<script src="comentario.js"></script>
+
+
+</body>
+</html>
+
+        
+    
