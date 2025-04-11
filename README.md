@@ -7,10 +7,7 @@ CSS
 JavaScript 
 
 # Estrutura do Projeto
-bash
-Copiar
-Editar
-/
+
 ├── index.html              # Página inicial de login e cadastro
 
 ├── paginas2.html           # Tela principal com barra lateral, carrossel e destaques
