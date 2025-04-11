@@ -56,6 +56,5 @@ Use as seções de login/cadastro para navegar até o site principal.
 
 Para pleno funcionamento, mantenha a estrutura de pastas e certifique-se de que imagens e vídeos estejam nos locais corretos.
 
-👨‍💻 Autor
-Projeto desenvolvido por [Seu Nome Aqui], aluno do curso de [Nome do Curso] – [Instituição].
+
 
