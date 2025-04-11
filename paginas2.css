@@ -284,3 +284,119 @@
             padding: 15px;
             margin-left: 260px; /* Ajuste para evitar sobreposição com a barra lateral */
         }
+
+            @media (max-width: 768px) {
+                .carousel-images img,
+                .game-card img,
+                .app-card img {
+                  width: 100%;
+                  height: auto;
+                  img {
+                    display: block;
+                    margin: 0 auto;
+                  }
+                }
+              
+              
+            .sidebar {
+                position: relative;
+                width: 100%;
+                height: auto;
+                display: flex;
+                flex-direction: row;
+                justify-content: space-around;
+                align-items: center;
+                padding: 10px 0;
+                z-index: 10;
+            }
+        
+            .logo-menu {
+                flex-direction: column;
+                align-items: center;
+            }
+        
+            .list {
+                display: flex;
+                flex-direction: row;
+                padding: 0;
+                margin: 0;
+            }
+        
+            .list-item {
+                margin: 0 10px;
+            }
+        
+            .list-item a {
+                padding: 8px;
+                font-size: 14px;
+            }
+        
+            .carousel-container,
+            .games,
+            .sobre-nos,
+            .footer {
+                margin-left: 0;
+                padding: 20px;
+            }
+        
+            .carousel-images {
+                flex-direction: column;
+                align-items: center;
+
+            }
+        
+           .carousel-images img {
+    width: 90vw;
+    height: auto;
+    max-height: 70vh;
+    margin: 10px auto;
+    display: block;
+    object-fit: contain;
+    align-items: center;
+    margin-left: 100%;  
+}
+        
+            button.prev,
+            button.next {
+                display: none; /* Esconde setas no celular */
+            }
+        
+            .games-container {
+                flex-direction: column;
+                align-items: center;
+            }
+        
+            .game-card {
+                width: 100%;
+                margin-bottom: 20px;
+            }
+        
+            .app-grid {
+                flex-direction: column;
+                align-items: center;
+                gap: 20px;
+            }
+        
+            .app-card {
+                width: 80%;
+            }
+        
+            .sobre-nos {
+                flex-direction: column;
+                text-align: center;
+            }
+        
+            .sobre-nos-content {
+                padding: 0;
+            }
+        
+            .mapa-container {
+                width: 100%;
+                margin-top: 20px;
+            }
+        
+            .footer {
+                text-align: center;
+            }
+        }
+        
